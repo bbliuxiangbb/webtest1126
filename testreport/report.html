@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>从业主体和诚信管理各菜单调用接口测试</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>从业主体和诚信管理各菜单调用接口测试</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-08-31 16:32:21</p>
+<p class='attribute'><strong>Duration:</strong> 0:11:21.123000</p>
+<p class='attribute'><strong>Status:</strong> Pass 21 Error 7</p>
+
+<p class='description'>由于开发改了很多业务的问题，或者是公共的方法，对于禅道没有涉及的业务，也没测试到，那么接口测试就可以帮助发现一些问题存在</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>testGGGLandCXBJjiekou.CyqyJiekou: 职能端各查询，引用，调档接口测试</td>
+    <td>28</td>
+    <td>21</td>
+    <td>0</td>
+    <td>7</td>
+    <td><a href="javascript:showClassDetail('c1',28)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_01: 公告管理，公告管理菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>testcyqy_02: 诚信管理办件情况，待办业务菜单查询接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 57, in testcyqy_02
+    dengdai(self.driver, loc2).click()
+  File "C:\Users\Administrator\PycharmProjects\web_test\common\webwa.py", line 8, in dengdai
+    element = WebDriverWait(driver, 40).until(lambda x: x.find_element(*loactor))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpukjr5jqp/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+    at FirefoxDriver.prototype.findElement (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpukjr5jqp/extensions/fxdriver@googlecode.com/components/driver-component.js:10779)
+    at DelayedCommand.prototype.executeInternal_/h (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpukjr5jqp/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpukjr5jqp/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpukjr5jqp/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_03: 诚信管理办件情况，已办业务菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_04: 诚信管理办件情况，已办结业务菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='errorCase'><div class='testcase'>testcyqy_05: 诚信管理办件情况，待办业务菜单查询接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        error</a>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 109, in testcyqy_05
+    self.driver.switch_to.frame("iframeslxx")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\switch_to.py", line 68, in frame
+    self._driver.execute(Command.SWITCH_TO_FRAME, {'id': frame_reference})
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchFrameException: Message: Unable to locate frame: iframeslxx
+Stacktrace:
+    at FirefoxDriver.prototype.switchToFrame (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp_7cnxjjv/extensions/fxdriver@googlecode.com/components/driver-component.js:10840)
+    at DelayedCommand.prototype.executeInternal_/h (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp_7cnxjjv/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp_7cnxjjv/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmp_7cnxjjv/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_06: 物业服务项目业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_07: 物业服务项目查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_08: 物业服务企业诚信管理办件情况-待办业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_10: 物业服务企业诚信管理办件情况-已办结业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_11: 诚信管理综合待办业务-待办业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_12: 开发项目管理-项目备案查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.12' class='none'>
+    <td class='errorCase'><div class='testcase'>testcyqy_13: 开发项目管理-开发项目查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.12')" >
+        error</a>
+
+    <div id='div_ft1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.12: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 260, in testcyqy_13
+    dengdai(self.driver, loc3).click()  # 点查询
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Element is not clickable at point (561, 20). Other element would receive the click: &lt;div class="loadingdiv"&gt;&lt;/div&gt;
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_14: 开发项目管理-项目进度管理菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_15: 预（销）售许可管理-房地产开发投资和市场运行情况调查表查询-云浮菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='errorCase'><div class='testcase'>testcyqy_16: 预(销)售管理-企业申请查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        error</a>
+
+    <div id='div_ft1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.15: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 315, in testcyqy_16
+    dengdai(self.driver, loc3).click()  # 点查询
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Element is not clickable at point (810.7000122070312, 25). Other element would receive the click: &lt;div class="loadingdiv"&gt;&lt;/div&gt;
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.16' class='none'>
+    <td class='errorCase'><div class='testcase'>testcyqy_17: 预(销)售管理-预（销）售许可管理菜单查询接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.16')" >
+        error</a>
+
+    <div id='div_ft1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.16: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 334, in testcyqy_17
+    dengdai(self.driver, loc3).click()  # 点查询
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Element is not clickable at point (804.7000122070312, 25). Other element would receive the click: &lt;div class="loadingdiv"&gt;&lt;/div&gt;
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_18: 预(销)售管理-合同模板管理菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_19: 预(销)售管理-楼盘表管理菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_20: 预(销)售管理-业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.20' class='none'>
+    <td class='errorCase'><div class='testcase'>testcyqy_21: 预(销)售管理-楼盘表查看菜单查询接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.20')" >
+        error</a>
+
+    <div id='div_ft1.20' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.20').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.20: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 417, in testcyqy_21
+    dengdai(self.driver, loc1).click()
+  File "C:\Users\Administrator\PycharmProjects\web_test\common\webwa.py", line 8, in dengdai
+    element = WebDriverWait(driver, 40).until(lambda x: x.find_element(*loactor))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "C:\Users\Administrator\PycharmProjects\web_test\common\webwa.py", line 8, in &lt;lambda&gt;
+    element = WebDriverWait(driver, 40).until(lambda x: x.find_element(*loactor))
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 191, in check_response
+    raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 该账号或密码错误，详情请联系管理部门咨询!
+Message: Unexpected modal dialog (text: 该账号或密码错误，详情请联系管理部门咨询!)
+Stacktrace:
+    at fxdriver.modals.closeUnhandledAlert/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/command-processor.js:10085)
+    at fxdriver.modals.isModalPresent/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/command-processor.js:9993)
+    at fxdriver.Timer.prototype.runWhenTrue/g (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/command-processor.js:631)
+    at fxdriver.Timer.prototype.runWhenTrue (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/command-processor.js:633)
+    at fxdriver.modals.isModalPresent (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/command-processor.js:9989)
+    at fxdriver.modals.closeUnhandledAlert (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/command-processor.js:10074)
+    at nsCommandProcessor.prototype.execute (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/command-processor.js:12731)
+    at Dispatcher.executeAs/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+    at Resource.prototype.handle (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+    at Dispatcher.prototype.dispatch (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+    at WebDriverServer/&lt;.handle (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+    at createHandlerFunc/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+    at ServerHandler.prototype.handleResponse (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+    at Connection.prototype.process (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+    at RequestReader.prototype._handleResponse (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+    at RequestReader.prototype._processBody (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+    at RequestReader.prototype.onInputStreamReady (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+    at openModalWindow (resource://gre/components/nsPrompter.js:360)
+    at ModalPrompter.prototype.openPrompt (resource://gre/components/nsPrompter.js:550)
+    at ModalPrompter.prototype.alert (resource://gre/components/nsPrompter.js:602)
+    at ObservingAlert.prototype.alert (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpo60ndah_/extensions/fxdriver@googlecode.com/components/prompt-service.js:4745)
+    at SubmitSucceedTips (http://168.168.28.17:8080/scripts/Account/login.js?v=20190702:310)
+    at submitL/&lt;.success (http://168.168.28.17:8080/scripts/Account/login.js?v=20190702:289)
+    at v.Callbacks/l (http://168.168.28.17:8080/assets/js/jquery-1.8.3-min.js:2)
+    at v.Callbacks/c.fireWith (http://168.168.28.17:8080/assets/js/jquery-1.8.3-min.js:2)
+    at T (http://168.168.28.17:8080/assets/js/jquery-1.8.3-min.js:2)
+    at .send/r (http://168.168.28.17:8080/assets/js/jquery-1.8.3-min.js:2)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_22: 预(销)售管理-房地产市场指标上报查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_23: 预(销)售管理-房地产市场指标统计报表菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_24: 预(销)售管理-商品房价格备案查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.24' class='none'>
+    <td class='errorCase'><div class='testcase'>testcyqy_25: 预(销)售管理-待办业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.24')" >
+        error</a>
+
+    <div id='div_ft1.24' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.24').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.24: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 28, in setUp
+    self.driver = webdriver.Firefox()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\firefox\webdriver.py", line 80, in __init__
+    self.binary, timeout)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\firefox\extension_connection.py", line 52, in __init__
+    self.binary.launch_browser(self.profile, timeout=timeout)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\firefox\firefox_binary.py", line 68, in launch_browser
+    self._wait_until_connectable(timeout=timeout)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\firefox\firefox_binary.py", line 108, in _wait_until_connectable
+    % (self.profile.path))
+selenium.common.exceptions.WebDriverException: Message: Can't load the profile. Profile Dir: C:\Users\ADMINI~1\AppData\Local\Temp\tmpxg7ta5u1 If you specified a log_file in the FirefoxBinary constructor, check it for details.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_26: 预(销)售管理-已办业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_27: 预(销)售管理-装修标准菜单新增查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_28: 预(销)售管理-项目进度管理菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_9: 物业服务企业诚信管理办件情况-已办业务查询菜单查询接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>28</td>
+    <td>21</td>
+    <td>0</td>
+    <td>7</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

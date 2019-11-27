@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>从业主体和诚信管理，存量房管理，预售资金系统，商品房合同管理，统计分析各菜单调查询，引用，调档测试</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>从业主体和诚信管理，存量房管理，预售资金系统，商品房合同管理，统计分析各菜单调查询，引用，调档测试</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-09-25 19:01:47</p>
+<p class='attribute'><strong>Duration:</strong> 1:07:09.198000</p>
+<p class='attribute'><strong>Status:</strong> Pass 201 Error 1</p>
+
+<p class='description'>由于开发改了很多业务的问题，或者是公共的方法，对于禅道没有涉及的业务，也没测试到，那么查询，调档，引用接口测试就可以帮助发现一些问题存在</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>testCLFGLandYSZJ.TestCLFGLandYSZJjiekou: 职能端各查询，引用，调档功能测试</td>
+    <td>47</td>
+    <td>47</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',47)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_01: 存量房管理-窗口房源信息查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_02: 存量房管理-所有房源信息查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_03: 存量房管理-买卖合同管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_04: 存量房管理-业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_05: 存量房管理-经纪服务合同查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_06: 存量房管理-江门-合同撤销申请查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_07: 存量房管理-江门—合同变更查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_08: 存量房管理-江门存量房买卖合同管理（职能端）查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_09: 存量房管理-待办业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_10: 存量房管理-已办业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_11: 存量房管理-江门-合同撤销业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_12: 存量房管理-房源补录查询（职能端）查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_13: 存量房管理-合同备案,引用，查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_14: 存量房管理-合同撤销,引用，查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_15: 存量房管理-江门—合同变更,引用，查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_16: 统计报表管理(江门)-签约情况统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_17: 统计报表管理(江门)-成交情况统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_18: 统计报表管理(江门)-中介签约情况统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_19: 统计报表管理(江门)-窗口成交情况统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_20: 预售资金监管-缴款提醒查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_21: 预售资金监管-按揭归集提醒查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_22: 预售资金监管-缴款计划管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_23: 预售资金监管-资金入账管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_24: 预售资金监管-监管账户管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_25: 预售资金监管-资金划拨管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_26: 预售资金监管-取消资金监管查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_27: 预售资金监管-对账管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_28: 预售资金监管-楼盘管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_29: 预售资金监管-资金归集查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_30: 预售资金监管-银行对账查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_31: 预售资金监管-监管任务分配管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.32' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_32: 预售资金监管-施工许可证申请查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.33' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_33: 预售资金监管-监管账户管理-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.34' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_34: 预售资金监管-资金划拨管理-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.35' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_35: 预售资金监管-开发商监管信息申请管理-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.36' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_36: 预售资金监管-开发商监管资金比例设置-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.37' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_37: 预售资金监管-保函管理-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.38' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_38: 预售资金监管-监管账户管理-阳江查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.39' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_39: 预售资金监管-资金划拨管理-阳江查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.40' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_40: 预售资金监管-监管账户管理-江门查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.41' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_41: 预售资金监管-取消资金监管-江门查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.42' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_42: 预售资金监管-资金划拨管理-江门查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.43' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_43: 预售资金监管-对账管理-江门查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.44' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_44: 预售资金监管-对账管理-阳江查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.45' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_45: 预售资金监管-预售合同网签情况统计表查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.46' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_46: 预售资金监管-资金划拨管理—台山查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.47' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_47: 预售资金监管-资金入账管理-江门查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>testCXGLCDjiekouYZM.CxglJiekou: 职能端诚信管理各查询，引用，调档接口测试</td>
+    <td>41</td>
+    <td>41</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',41)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_01: 诚信管理，开发商奖惩积分规则菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_02: 诚信管理，开发商诚信管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_03: 诚信管理，开发商诚信统计菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_04: 诚信管理，物业服务奖惩积分规则菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_05: 诚信管理，物业服务诚信管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_06: 诚信管理，物业服务诚信统计菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_07: 诚信管理，诚信等级管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_08: 诚信管理，经纪机构奖惩积分规则菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_09: 诚信管理，经纪机构诚信管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_10: 诚信管理，经纪机构诚信统计菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_11: 诚信管理，诚信奖罚业务查询-清远菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_12: 诚信管理，诚信上诉业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_13: 诚信管理，安全鉴定机构奖惩积分规则菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_14: 诚信管理，安全鉴定机构诚信管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_15: 诚信管理，安全鉴定机构诚信统计菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_16: 诚信管理，诚信加分业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_17: 诚信管理，不良记录查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_18: 诚信管理，鉴定企业诚信评分规则管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_19: 诚信管理，诚信等级管理（云浮）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_20: 诚信管理，诚信行为记录（云浮）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_21: 诚信管理，诚信申诉业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_22: 诚信管理，诚信行为记录查询（云浮）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_23: 诚信管理，企业抽查记录（云浮）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_24: 诚信管理，企业抽查记录（云浮）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_25: 诚信管理，诚信管理（云浮）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_26: 诚信管理，企业黑名单管理（云浮）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_27: 诚信管理，诚信档案统计功能菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_28: 诚信管理，物业协会菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_29: 诚信管理，诚信建档查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_30: 诚信管理，诚信记录业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_31: 诚信管理，诚信行为记录查询查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.32' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_32: 诚信管理，诚信等级管理-江门查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.33' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_33: 诚信管理，诚信红黑榜查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.34' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_34: 诚信管理，失信行为申报受理-江门菜单查询,引用企业接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.35' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_35: 诚信管理，诚信批量加减分受理菜单查询受理接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.36' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_36: 诚信管理，诚信减分受理(清远)菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.37' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_38: 诚信管理，失信行为申报受理-江门菜单查询,引用企业接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.38' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_39: 诚信管理，异议申请受理-江门菜单查询,引用企业接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.39' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_40: 从业主体管理，诚信上诉业务受理菜单引用企业接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.40' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_41: 诚信管理，诚信建档补录菜单查询,引用企业接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.41' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcxgl_42: 诚信管理，诚信建档受理菜单查询,引用企业接口</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>testCYQYCDjiekouYZM.CYyqyJiekou: 职能端各查询，引用，调档功能测试</td>
+    <td>18</td>
+    <td>18</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',18)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_01: 从业主体管理，企业备案_开发商企业菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_02: 从业主体管理，企业备案_其他企业查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_03: 从业主体管理，从业人员管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_04: 从业主体管理，从业企业管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_05: 从业主体管理，企业申请查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_06: 从业主体管理，企业变更菜单引用企业功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_07: 从业主体管理，业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_08: 从业主体管理，从业账号管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_09: 从业主体管理，企业备案_经纪机构菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_10: 从业主体管理，企业注销_经纪机构菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_11: 从业主体管理，企业备案_物业企业菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_12: 从业主体管理，待办业务菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_13: 从业主体管理，已办业务菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_14: 从业主体管理，企业年审审批菜单引用企业功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_15: 从业主体管理，企业备案_安全鉴定机构菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_16: 从业主体管理，鉴定机构企业管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_17: 从业主体管理，企业资质证书注销申请受理菜单引用企业功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testcyqy_18: 从业主体管理，企业资质证书补录菜单引用企业功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>testGGGLandCXBJjiekou.TestGGGLandCXBJjiekou: 职能端各查询，引用，调档功能测试</td>
+    <td>52</td>
+    <td>51</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',52)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_01: 公告管理，公告管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_02: 诚信管理办件情况，待办业务菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_03: 诚信管理办件情况，已办业务菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_04: 诚信管理办件情况，已办结业务菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_05: 物业服务项目---物业服务项目受理功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_06: 物业服务项目---物业服务项目业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_07: 物业服务项目--物业服务项目查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_08: 物业服务企业诚信管理办件情况-待办业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_09: 物业服务企业诚信管理办件情况-已办业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_10: 物业服务企业诚信管理办件情况-已办结业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_11: 诚信管理综合待办业务-待办业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_12: 开发项目管理-项目备案查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_13: 开发项目管理-开发项目查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_14: 开发项目管理-项目进度管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_15: 预（销）售许可管理-房地产开发投资和市场运行情况调查表查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_16: 预(销)售管理-企业申请查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_17: 预(销)售管理-预（销）售许可管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_18: 预(销)售管理-合同模板管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft4.19' class='none'>
+    <td class='errorCase'><div class='testcase'>testgg_19: 预(销)售管理-楼盘表管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.19')" >
+        error</a>
+
+    <div id='div_ft4.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.19: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\web_test\testcase\testGGGLandCXBJjiekou.py", line 410, in testgg_19
+    dengdai(self.driver, loc2).click()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: Element is not currently visible and so may not be interacted with
+Stacktrace:
+    at fxdriver.preconditions.visible (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpzp2qa9v_/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+    at DelayedCommand.prototype.checkPreconditions_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpzp2qa9v_/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+    at DelayedCommand.prototype.executeInternal_/h (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpzp2qa9v_/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+    at DelayedCommand.prototype.executeInternal_ (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpzp2qa9v_/extensions/fxdriver@googlecode.com/components/command-processor.js:12666)
+    at DelayedCommand.prototype.execute/&lt; (file:///C:/Users/ADMINI~1/AppData/Local/Temp/tmpzp2qa9v_/extensions/fxdriver@googlecode.com/components/command-processor.js:12608)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_20: 预(销)售管理-业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_21: 预(销)售管理-楼盘表查看菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_22: 预(销)售管理-房地产市场指标上报查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_23: 预(销)售管理-房地产市场指标统计报表菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_24: 预(销)售管理-商品房价格备案查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_25: 预(销)售管理-待办业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_26: 预(销)售管理-已办业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_27: 预(销)售管理-装修标准菜单新增查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_28: 预(销)售管理-项目进度管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_29: 预(销)售管理-项目进度管理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_30: 预(销)售管理-房地产开发投资和市场运行情况调查表查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_31: 预(销)售管理-合同模板变更受理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.32' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_32: 预(销)售管理-楼盘表管理（商品房）查询功能</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.32')" >
+        pass</a>
+
+    <div id='div_pt4.32' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.32').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.32: True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.33' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_33: 回迁房业务-回迁房业务申请查询（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.34' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_34: 回迁房业务-回迁房业务申请查询（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.35' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_35: 预(销)售管理-回迁房业务受理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.36' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_36: 预(销)售管理-回迁房业务变更受理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.37' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_37: 商品房合同管理-合同管理查询（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.38' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_38: 商品房合同管理-合同备案查询（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.39' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_39: 商品房合同管理-合同注销查询（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.40' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_40: 商品房合同管理-合同统计（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.41' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_41: 商品房合同管理-购房资格审批查询（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.42' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_42: 商品房合同管理-购房资格作废（职能）菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.43' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_43: 商品房合同管理-合同备案-申请查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.44' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_44: 商品房合同管理-商品房合同变更查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.45' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_45: 商品房合同管理-待办业务菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.46' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_46: 商品房合同管理-已办业务查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.47' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_47: 商品房合同管理-已备案合同变更查询菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.48' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_48: 商品房合同管理-合同备案受理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.49' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_49: 商品房合同管理-合同注销受理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.50' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_50: 商品房合同管理-商品房合同变更受理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.51' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_51: 商品房合同管理-已备案合同注销受理菜单查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.52' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_53: 同步日志管理-江门推送PDF合同日志查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>testYSZJTJFX.TestYSZJTJFXjiekou: 职能端各查询，引用，调档功能测试</td>
+    <td>44</td>
+    <td>44</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',44)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_01: 统计分析-监管账户汇总信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_02: 统计分析-登记入账详细信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_03: 统计分析-登记划拨详细信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_04: 统计分析-银行入账详细信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_05: 统计分析-银行划拨详细信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_06: 统计分析-按揭归集汇总信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_07: 统计分析-按揭归集详细信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_08: 统计分析-月度收支情况表统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_09: 统计分析-银行流水详细信息统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_10: 统计分析-中国银行监管账户统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_11: 统计分析-一般户异常流水统计查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_12: 统计分析-监管银行统计总表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_13: 统计分析-监管银行统计明细表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_14: 统计分析-项目竣工情况统计表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_15: 统计分析-竣工验收统计表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_16: 统计分析-监管账户汇总信息统计-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_17: 统计分析-工作绩效统计表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_18: 统计分析-预售账户收支信息-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_19: 统计分析-登记划拨详细信息统计-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_20: 统计分析-月度收支情况表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_21: 统计分析-登记划拨详细信息统计(江门)查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_22: 统计分析-施工许可统计明细表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_23: 统计分析-预售账户进账统计报表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_24: 统计分析-施工账户进账统计报表-清远查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_25: 预售资金-业务审核-已办结业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_26: 预售资金-业务审核-待办业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_27: 预售资金-业务审核-已办业务查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_28: 预售款监管办件情况-清远-待办件查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_29: 预售款监管办件情况-清远-已办件查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_30: 预售款监管办件情况-清远-已办结查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_31: 项目手册管理-开发商监管信息管理-云浮查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.32' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_32: 项目手册管理-项目建设预算管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.33' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_33: 项目手册管理-施工进度管理-云浮查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.34' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_34: 项目手册管理-项目融资管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.35' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_35: 项目手册管理-项目资金使用管理查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.36' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_36: 项目手册管理-工人工资银行对账查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.37' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_37: 项目手册管理-工人工资支付专户查询功能</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.38' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_38: 楼盘管理-新建楼盘审核查询</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.39' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_39: 楼盘管理-商品房添加</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.40' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_40: 楼盘管理-商品房分割</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.41' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_41: 楼盘管理-商品房合并</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.42' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_42: 楼盘管理-商品房修改</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.43' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_43: 楼盘管理-商品房业务查询</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt5.44' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgg_44: 楼盘管理-房屋分割</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>202</td>
+    <td>201</td>
+    <td>0</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
